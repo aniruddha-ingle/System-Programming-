@@ -1,0 +1,25 @@
+macro
+add &x,&y
+load &x
+add &y,&x
+store &x
+mend
+macro
+sub &x,&y,&z
+load &x
+sub &y
+store &z
+mend
+
+sample	start 0
+	using *,15
+	l acc,num1
+	l 3,=f'05'
+	st acc,res
+	add a,b
+	br 14
+	sub c,d
+acc	equ 4
+num1	dc f'20'
+res	ds 1f
+	end
